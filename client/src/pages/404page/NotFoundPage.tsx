@@ -1,6 +1,6 @@
 import './notFoundPage.scss';
 
-const NotFoundPath = () => {
+const NotFoundPath:React.FC = () => {
     return (
         <section className='page_404'>
             <div className='conatiner'>
@@ -14,7 +14,7 @@ const NotFoundPath = () => {
                             <div className='contant_box_404'>
                                 <h3 className='h2'>Look like you're lost</h3>
 
-                                <p cl>
+                                <p>
                                     the page you are looking for not avaible!
                                 </p>
 
