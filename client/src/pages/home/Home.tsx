@@ -1,4 +1,3 @@
-// import { jsx } from 'react/jsx-runtime';
 import React from 'react';
 import Button from '../../components/button/Button';
 import './home.scss';
