@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+  }
+html{
+    border: 0.5rem solid black;
+    margin: 0;
+    padding: 0;
+    background-color:  #bbadff;
+    min-height: 100vh;
+}
+.monster{
+    width: 10rem;
+}
+.welcome{
+    border: 0.2rem solid black;
+    background-color:  #1db233;
+
+
+}
+h1, h2 {
+    color: #ffd500;
+}
+.start{
+    color:red;
+}

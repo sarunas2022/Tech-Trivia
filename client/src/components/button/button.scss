@@ -1,0 +1,27 @@
+
+$orange: #e36414;
+$purple: #bbadff;
+$green: #52b788;
+$yellow: #ffd500;
+
+
+
+
+button {
+ /* Remove default button styling */
+    border: none;
+    outline: none;
+
+  /* Add custom styling */
+    transition: all 0.2s ease;
+    background-color: $orange;
+    box-shadow: 0 0.3rem black;
+    padding: 1rem 3rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid black;
+}
+
+button:active{
+    box-shadow: none;
+    transform: translateY(0.3rem);
+}
