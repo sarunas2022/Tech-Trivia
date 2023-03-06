@@ -20,9 +20,7 @@ const Home: React.FC = () => {
                 <img className='monster' src={Monster} alt='img' />
                 <h1 className='start'>Let's get started! Choose a topic:</h1>
                 <div className='topics'>
-                    <Button color='#e36414' onClick={handleClick}>
-                        I know it all
-                    </Button>
+                    
                     <Button color='#e36414' onClick={handleClick}>
                         HTML
                     </Button>
@@ -34,6 +32,9 @@ const Home: React.FC = () => {
                     </Button>
                     <Button color='#e36414' onClick={handleClick}>
                         JavaScript
+                    </Button>
+                    <Button color='#e36414' onClick={handleClick}>
+                        I know it all
                     </Button>
                 </div>
             </div>
