@@ -4,9 +4,7 @@ $green: #52b788;
 $yellow: #ffd500;
 $red: #d90429;
 
-* {
-    box-sizing: border-box;
-}
+
 
 html {
     border: 0.5rem solid black;
@@ -20,8 +18,8 @@ html {
     justify-content: center;
     align-items: center;
     .welcome {
-        margin: 5rem 4rem 3rem 4rem;
-        padding: 2rem 6rem;
+        margin: 4rem 4rem 3rem 4rem;
+        padding: 1.5rem 6rem;
         border: 0.2rem solid black;
         border-radius: 2%;
         box-shadow: rgba(0, 0, 0, 0.47) 0px 4px 12px;
@@ -38,7 +36,6 @@ html {
     .monster {
         width: 10rem;
         animation: updown 4s linear infinite;
-        
     }
     @keyframes updown {
         0% {
@@ -63,7 +60,7 @@ html {
         color: $red;
         margin-top: 3rem;
         text-shadow: 1px 1px 2px black;
-        
+        text-align: center;
     }
 
     .topics {
@@ -71,27 +68,14 @@ html {
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 2rem;
-
-        button {
-            margin: 1rem;
-            font-size: 1.5rem;
-            background-color: $orange;
-            padding: 0.5rem 2rem;
-            border: none;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: all ease-in-out;
-            
-            
-
-            &:hover {
-              color: #061906;
-            }
-
-            &:active {
-                transform: translateY(0.2rem);
-                background-color: $orange;
-            }
-        }
     }
+}
+
+@media screen and (max-width: 1000px) {
+  .topHalf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

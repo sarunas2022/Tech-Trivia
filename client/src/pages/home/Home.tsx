@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from '../../components/button/Button';
-import './home.scss';
+import BigButton from '../../components/bigButton/BigButton';
 import Monster from '../../monster.png';
+import './home.scss';
 
 const Home: React.FC = () => {
     const handleClick = () => {
@@ -38,6 +39,12 @@ const Home: React.FC = () => {
                         I know it all
                     </Button>
                 </div>
+                <div>
+                    <BigButton color='$red' onClick={handleClick}>
+                        START
+                    </BigButton>
+                </div>
+
             </div>
         </>
     );
