@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../../components/button/Button';
+
 interface AnswersArray {
     id: number;
     answer: string;
     correct: number;
 }
+
 interface QuestionsArray {
     id: number;
     topic: string;
@@ -13,9 +15,11 @@ interface QuestionsArray {
 }
 
 const Questions: React.FC = () => {
-    const [questions, setQuestions] = useState<QuestionsArray[]>([]);
+    const [questions, setQuestions] = useState<QuestionsArray[]>([]); // Saves fetched questions
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Keep track of the current question index
+    const [userAnswers, setUserAnswers] = useState([]);
     console.log(questions);
-
+    // getting questions for selected topic
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
@@ -31,36 +35,67 @@ const Questions: React.FC = () => {
         fetchQuestions();
     }, []);
 
+    // On button moves to next question
     const nextQuestion = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('clicked');
+        setCurrentQuestionIndex(currentQuestionIndex + 1); // Increment the current question index on button click
+    };
+    // on the last question button click relocates to show results
+    const showResults = (e: React.FormEvent) => {
+        e.preventDefault();
     };
 
     return (
         <>
             <div className='output'>
-                {questions.map((question) => (
-                    <form className='output__card' key={question.id}>
+                {/* if there are questions fetched returns questions with current indx */}
+                {questions.length > 0 && (
+                    <form
+                        className='output__card'
+                        key={questions[currentQuestionIndex].id}
+                    >
                         <h1 className='output__question'>
-                            {question.question}
+                            {questions[currentQuestionIndex].question}
                         </h1>
-                        {question.answers.map((answer) => (
-                            <div className='output__answers'>
-                                <input
-                                    type='radio'
-                                    id={answer.id.toString()}
-                                    name={question.id.toString()}
-                                />
-                                <label htmlFor={answer.id.toString()}>
-                                    {answer.answer}
-                                </label>
-                            </div>
-                        ))}
-                        <Button color='orange' onClick={(e) => nextQuestion(e)}>
-                            NEXT
-                        </Button>
+                        {/*maps through all answers for current question and displays them  */}
+                        {questions[currentQuestionIndex].answers.map(
+                            (answer) => (
+                                <div
+                                    className='output__answers'
+                                    key={answer.id}
+                                >
+                                    <input
+                                        type='radio'
+                                        id={answer.id.toString()}
+                                        name={questions[
+                                            currentQuestionIndex
+                                        ].id.toString()}
+                                    />
+                                    <label htmlFor={answer.id.toString()}>
+                                        {answer.answer}
+                                    </label>
+                                </div>
+                            )
+                        )}
+
+                        {currentQuestionIndex < questions.length - 1 ? ( // Only show the NEXT button if there are more questions to display
+                            <Button
+                                color='$orange'
+                                onClick={(e) => nextQuestion(e)}
+                            >
+                                NEXT
+                            </Button>
+                        ) : (
+                            // Display a FINISH button instead of NEXT button for the last question
+                            <Button
+                                color='$orange'
+                                onClick={(e) => showResults(e)}
+                            >
+                                FINISH
+                            </Button>
+                        )}
                     </form>
-                ))}
+                )}
             </div>
         </>
     );
