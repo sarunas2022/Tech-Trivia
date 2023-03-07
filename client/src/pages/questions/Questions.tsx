@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Button from '../../components/button/Button';
 interface AnswersArray {
     id: number;
     answer: string;
@@ -30,6 +31,11 @@ const Questions: React.FC = () => {
         fetchQuestions();
     }, []);
 
+    const nextQuestion = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log('clicked');
+    };
+
     return (
         <>
             <div className='output'>
@@ -50,6 +56,9 @@ const Questions: React.FC = () => {
                                 </label>
                             </div>
                         ))}
+                        <Button color='orange' onClick={(e) => nextQuestion(e)}>
+                            NEXT
+                        </Button>
                     </form>
                 ))}
             </div>

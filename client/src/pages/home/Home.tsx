@@ -20,7 +20,6 @@ const Home: React.FC = () => {
                 <img className='monster' src={Monster} alt='img' />
                 <h1 className='start'>Let's get started! Choose a topic:</h1>
                 <div className='topics'>
-                    
                     <Button color='#e36414' onClick={handleClick}>
                         HTML
                     </Button>
