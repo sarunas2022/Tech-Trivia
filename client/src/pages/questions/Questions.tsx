@@ -21,16 +21,40 @@ const Questions: React.FC = () => {
                 const response: Response = await fetch(
                     'http://localhost:8080/questions?topic=All'
                 );
-                const data: QuestionsArray[] = await response.json();
+                const data = await response.json();
                 setQuestions(data);
             } catch (err) {
                 console.log(err);
             }
         };
         fetchQuestions();
-    }, [questions]);
+    }, []);
 
-    return <div></div>;
+    return (
+        <>
+            <div className='output'>
+                {questions.map((question) => (
+                    <form className='output__card' key={question.id}>
+                        <h1 className='output__question'>
+                            {question.question}
+                        </h1>
+                        {question.answers.map((answer) => (
+                            <div className='output__answers'>
+                                <input
+                                    type='radio'
+                                    id={answer.id.toString()}
+                                    name={question.id.toString()}
+                                />
+                                <label htmlFor={answer.id.toString()}>
+                                    {answer.answer}
+                                </label>
+                            </div>
+                        ))}
+                    </form>
+                ))}
+            </div>
+        </>
+    );
 };
 
 export default Questions;
