@@ -18,11 +18,10 @@ const Home: React.FC = () => {
                     <h1>TECH TRIVIA</h1>
                 </div>
                 <img className='monster' src={Monster} alt='img' />
-                </div>
-                <div className='bottomHalf'>
+            </div>
+            <div className='bottomHalf'>
                 <h1 className='start'>Let's get started! Choose a topic:</h1>
                 <div className='topics'>
-                    
                     <Button color='$orange' onClick={handleClick}>
                         HTML
                     </Button>
@@ -39,7 +38,7 @@ const Home: React.FC = () => {
                         I know it all
                     </Button>
                 </div>
-                </div>
+            </div>
         </>
     );
 };
