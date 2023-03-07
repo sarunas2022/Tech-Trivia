@@ -1,62 +1,97 @@
+$orange: #e36414;
+$purple: #bbadff;
+$green: #52b788;
+$yellow: #ffd500;
+$red: #d90429;
+
 * {
     box-sizing: border-box;
-  }
-  
-  html {
+}
+
+html {
     border: 0.5rem solid black;
-    background-color: #bbadff;
+    background-color: $purple;
     min-height: 100vh;
-  }
-  
-  .topHalf {
+}
+
+.topHalf {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .welcome {
+        margin: 5rem 4rem 3rem 4rem;
+        padding: 2rem 6rem;
+        border: 0.2rem solid black;
+        border-radius: 2%;
+        box-shadow: rgba(0, 0, 0, 0.47) 0px 4px 12px;
+        text-shadow: 3px 3px #7955bb;
+        background-color: $green;
+
+        h1,
+        h2 {
+            color: $yellow;
+            text-align: center;
+        }
+    }
+
+    .monster {
+        width: 10rem;
+        animation: updown 4s linear infinite;
+        
+    }
+    @keyframes updown {
+        0% {
+            transform: translate(-0px, 0px);
+        }
+        50% {
+            transform: translate(0px, 20px);
+        }
+        100% {
+            transform: translate(-0px, -0px);
+        }
+    }
+}
+
+.bottomHalf {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
-    .monster {
-      width: 10rem;
-    }
-  
-    .welcome {
-      border: 0.2rem solid black;
-      background-color: #4aa77c;
-  
-      h1,
-      h2 {
-        color: #ffd500;
-      }
-    }
-  
+
     .start {
-      color: red;
+        color: $red;
+        margin-top: 3rem;
+        text-shadow: 1px 1px 2px black;
+        
     }
-  
+
     .topics {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2rem;
-  
-      button {
-        margin: 1rem;
-        font-size: 1.5rem;
-        background-color: #e36414;
-        padding: 0.5rem 2rem;
-        border: none;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        transition: all  ease-in-out;
-  
-        // &:hover {
-        //   color: #061906;
-        // }
-  
-        &:active {
-          transform: translateY(0.2rem);
-          background-color: #d95204;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2rem;
+
+        button {
+            margin: 1rem;
+            font-size: 1.5rem;
+            background-color: $orange;
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all ease-in-out;
+            
+            
+
+            &:hover {
+              color: #061906;
+            }
+
+            &:active {
+                transform: translateY(0.2rem);
+                background-color: $orange;
+            }
         }
-      }
     }
-  }
-  
+}
