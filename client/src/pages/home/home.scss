@@ -4,10 +4,6 @@ $green: #52b788;
 $yellow: #ffd500;
 $red: #d90429;
 
-* {
-    box-sizing: border-box;
-}
-
 html {
     border: 0.5rem solid black;
     background-color: $purple;
@@ -38,7 +34,6 @@ html {
     .monster {
         width: 10rem;
         animation: updown 4s linear infinite;
-        
     }
     @keyframes updown {
         0% {
@@ -63,7 +58,6 @@ html {
         color: $red;
         margin-top: 3rem;
         text-shadow: 1px 1px 2px black;
-        
     }
 
     .topics {
@@ -81,11 +75,9 @@ html {
             border-radius: 0.5rem;
             cursor: pointer;
             transition: all ease-in-out;
-            
-            
 
             &:hover {
-              color: #061906;
+                color: #061906;
             }
 
             &:active {
