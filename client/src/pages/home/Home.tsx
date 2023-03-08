@@ -54,6 +54,7 @@ const Home: React.FC = () => {
                         START
                     </BigButton>
                 </div>
+
             </div>
         </>
     );
