@@ -4,12 +4,6 @@ $green: #52b788;
 $yellow: #ffd500;
 $red: #d90429;
 
-html {
-    border: 0.5rem solid black;
-    background-color: $purple;
-    min-height: 100vh;
-}
-
 .topHalf {
     display: flex;
     flex-direction: row;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../../components/button/Button';
+import './questions.scss';
 
 interface AnswersArray {
     id: number;
@@ -54,9 +55,15 @@ const Questions: React.FC = () => {
                         className='output__card'
                         key={questions[currentQuestionIndex].id}
                     >
-                        <h1 className='output__question'>
+                        {/* to show topic of the current question */}
+                        <h2 className='output__topic'>
+                            {`${questions[
+                                currentQuestionIndex
+                            ].topic.toUpperCase()} question`}
+                        </h2>
+                        <h3 className='output__question'>
                             {questions[currentQuestionIndex].question}
-                        </h1>
+                        </h3>
                         {/*maps through all answers for current question and displays them  */}
                         {questions[currentQuestionIndex].answers.map(
                             (answer) => (
@@ -80,7 +87,7 @@ const Questions: React.FC = () => {
 
                         {currentQuestionIndex < questions.length - 1 ? ( // Only show the NEXT button if there are more questions to display
                             <Button
-                                color='$orange'
+                                color='$purple'
                                 onClick={(e) => nextQuestion(e)}
                             >
                                 NEXT
@@ -88,7 +95,7 @@ const Questions: React.FC = () => {
                         ) : (
                             // Display a FINISH button instead of NEXT button for the last question
                             <Button
-                                color='$orange'
+                                color='$purple'
                                 onClick={(e) => showResults(e)}
                             >
                                 FINISH
