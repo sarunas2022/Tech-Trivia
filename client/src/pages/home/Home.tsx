@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../components/button/Button';
-import './home.scss';
+import BigButton from '../../components/bigButton/BigButton';
 import Monster from '../../monster.png';
+import './home.scss';
 
 const Home: React.FC = () => {
-    const handleClick = () => {
-        console.log('Button clicked');
+    const [selectedTopic, setSelectedTopic] = useState('');
+
+    const handleClick = (topic: string) => {
+        console.log(`Selected topic: ${topic}`);
+        setSelectedTopic(topic);
+    };
+
+    const handleStartClick = () => {
+        console.log(`Starting trivia for ${selectedTopic}`);
+        // TODO: Load trivia questions for selected topic
+
+    
     };
 
     return (
@@ -22,22 +33,28 @@ const Home: React.FC = () => {
             <div className='bottomHalf'>
                 <h1 className='start'>Let's get started! Choose a topic:</h1>
                 <div className='topics'>
-                    <Button color='$orange' onClick={handleClick}>
+                    <Button color='$orange' onClick={() => handleClick('HTML')}>
                         HTML
                     </Button>
-                    <Button color='$orange' onClick={handleClick}>
+                    <Button color='$orange' onClick={() => handleClick('CSS')}>
                         CSS
                     </Button>
-                    <Button color='$orange' onClick={handleClick}>
+                    <Button color='$orange' onClick={() => handleClick('React')}>
                         React
                     </Button>
-                    <Button color='$orange' onClick={handleClick}>
+                    <Button color='$orange' onClick={() => handleClick('JavaScript')}>
                         JavaScript
                     </Button>
-                    <Button color='$orange' onClick={handleClick}>
+                    <Button color='$orange' onClick={() => handleClick('I know it all')}>
                         I know it all
                     </Button>
                 </div>
+                <div>
+                    <BigButton color='$red' onClick={handleStartClick} >
+                        START
+                    </BigButton>
+                </div>
+
             </div>
         </>
     );
