@@ -4,7 +4,7 @@ import Home from './pages/home/Home';
 import Questions from './pages/questions/Questions';
 
 import './App.css';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const App: React.FC = () => {
     // const [topic, setTopic] = useState<string>('');
