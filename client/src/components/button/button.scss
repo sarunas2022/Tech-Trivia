@@ -12,18 +12,18 @@ button {
     /* Adding custom styling */
     margin: 1rem;
     transition: all 0.2s ease;
-background-color: $orange;
-    box-shadow: 0 0.3rem black;
+    background-color: $orange;
+    box-shadow: 0 0.3rem black, rgba(0, 0, 0, 0.363) 0px 4px 10px;
     padding: 1rem 3rem;
     border-radius: 0.3rem;
-    border: 0.1rem solid black;
-    font-weight: bolder;
+    border: 1px solid black;
+    font-weight:500;
 
     &:active {
         box-shadow: none;
         transform: translateY(0.3rem);
         background-color: #c15a19;
         color: white;
-        border: 0.1rem solid gray;
+        border: 1px solid gray;
     }
 }
