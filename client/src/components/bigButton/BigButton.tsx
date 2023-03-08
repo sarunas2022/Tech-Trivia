@@ -3,7 +3,7 @@ import './bigButton.scss';
 
 interface ButtonProps {
   color: string;
-  onClick: () => void;
+  onClick: (e: React.FormEvent) => void;
   children?: React.ReactNode;
 }
 

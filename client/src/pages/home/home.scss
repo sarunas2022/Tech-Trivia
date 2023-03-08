@@ -4,8 +4,6 @@ $green: #52b788;
 $yellow: #ffd500;
 $red: #d90429;
 
-
-
 html {
     border: 0.5rem solid black;
     background-color: $purple;
@@ -19,11 +17,11 @@ html {
     align-items: center;
     .welcome {
         margin: 4rem 4rem 3rem 4rem;
-        padding: 1.5rem 6rem;
+        padding: 1rem 7rem;
         border: 0.2rem solid black;
         border-radius: 2%;
-        box-shadow: rgba(0, 0, 0, 0.47) 0px 4px 12px;
-        text-shadow: 3px 3px #7955bb;
+        box-shadow: rgba(0, 0, 0, 0.47) 0px 4px 16px;
+        text-shadow: 4px 4px #4a0dbc;
         background-color: $green;
 
         h1,
@@ -59,7 +57,7 @@ html {
     .start {
         color: $red;
         margin-top: 3rem;
-        text-shadow: 1px 1px 2px black;
+        text-shadow: 1px 1px 1px black;
         text-align: center;
     }
 
@@ -71,11 +69,11 @@ html {
     }
 }
 
-@media screen and (max-width: 1000px) {
-  .topHalf {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+@media screen and (max-width: 950px) {
+    .topHalf {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

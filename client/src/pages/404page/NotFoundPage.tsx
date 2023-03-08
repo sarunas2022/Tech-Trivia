@@ -1,6 +1,5 @@
 import './notFoundPage.scss';
 
-
 const NotFoundPath: React.FC = () => {
     return (
         <section className='page_404'>
@@ -17,7 +16,7 @@ const NotFoundPath: React.FC = () => {
 
                                 <p>the page you are looking for not avaible!</p>
 
-                                <a href='/home' className='link_404'>
+                                <a href='/' className='link_404'>
                                     Go to Home
                                 </a>
                             </div>
